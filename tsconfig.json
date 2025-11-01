@@ -28,7 +28,12 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    ".next\\dev/types/**/*.ts",
+    ".next\\dev/types/**/*.ts",
+    "app/_lib/supabase.js",
+    "app/loading.tsx",
+    "app/cabins/[cabinId]/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
