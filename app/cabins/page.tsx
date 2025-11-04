@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
 import CabinList from "../_components/CabinList";
+
+export const revalidate = 3600; // ISR every hour
+
 export const metadata: Metadata = {
   title: "Cabins",
 };
