@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
 import CabinList from "../_components/CabinList";
-
-export const revalidate = 3600; // ISR every hour
+import Filter from "../_components/Filter";
 
 export const metadata: Metadata = {
   title: "Cabins",
 };
 
-export default function Cabins() {
+export default async function Cabins({
+  searchParams,
+}: {
+  searchParams: Promise<{ capacity: string | undefined }>;
+}) {
+  const searchParameters = await searchParams;
+  const filter = searchParameters?.capacity ?? "all";
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -24,8 +30,12 @@ export default function Cabins() {
         Welcome to paradise.
       </p>
 
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+
+      <Suspense fallback={<Spinner />} key={filter}>
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
