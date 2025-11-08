@@ -7,7 +7,7 @@ interface country {
   independent: boolean;
 }
 
-async function SelectCountry({
+export default async function SelectCountry({
   defaultCountry,
   name,
   id,
@@ -19,6 +19,7 @@ async function SelectCountry({
   className: string;
 }) {
   const countries: country[] = await getCountries();
+
   const flag =
     countries.find((country) => country.name === defaultCountry)?.flag ?? "";
 
@@ -31,6 +32,7 @@ async function SelectCountry({
       className={className}
     >
       <option value="">Select country...</option>
+
       {countries.map((c) => (
         <option key={c.name} value={`${c.name}%${c.flag}`}>
           {c.name}
@@ -39,5 +41,3 @@ async function SelectCountry({
     </select>
   );
 }
-
-export default SelectCountry;

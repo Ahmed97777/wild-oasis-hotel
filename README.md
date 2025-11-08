@@ -11,6 +11,7 @@ cabin-reserve-hotel
 │  │  └─ reservations
 │  │     └─ page.tsx
 │  ├─ cabins
+│  │  ├─ layout.tsx
 │  │  ├─ loading.tsx
 │  │  ├─ page.tsx
 │  │  └─ [cabinId]
@@ -25,17 +26,27 @@ cabin-reserve-hotel
 │  ├─ page.tsx
 │  ├─ _components
 │  │  ├─ CabinCard.tsx
+│  │  ├─ CabinInfo.tsx
 │  │  ├─ CabinList.tsx
+│  │  ├─ DateSelector.tsx
 │  │  ├─ DeleteReservation.tsx
+│  │  ├─ Filter.tsx
+│  │  ├─ FilterButton.tsx
 │  │  ├─ Header.tsx
 │  │  ├─ Logo.tsx
 │  │  ├─ Navigation.tsx
+│  │  ├─ Reservation.tsx
 │  │  ├─ ReservationCard.tsx
+│  │  ├─ ReservationContext.tsx
+│  │  ├─ ReservationForm.tsx
+│  │  ├─ ReservationReminder.tsx
 │  │  ├─ SelectCountry.tsx
 │  │  ├─ SideNavigation.tsx
 │  │  ├─ SignOutButton.tsx
 │  │  ├─ Spinner.tsx
-│  │  └─ SpinnerMini.tsx
+│  │  ├─ SpinnerMini.tsx
+│  │  ├─ TextExpander.tsx
+│  │  └─ UpdateProfileForm.tsx
 │  ├─ _lib
 │  │  ├─ data-service.js
 │  │  └─ supabase.js
